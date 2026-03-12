@@ -8,7 +8,7 @@ public abstract class TestBase
 {
     protected IWebDriver Driver = null!;
 
-    [SetUp]
+    [OneTimeSetUp]
     public void SetUp()
     {
         ExtentReportManager.InitializeReport();
@@ -16,7 +16,7 @@ public abstract class TestBase
         Driver = DriverFactory.CreateChromeDriver(headless);
     }
 
-    [TearDown]
+    [OneTimeTearDown]
     public void TearDown()
     {
         Driver.Quit();

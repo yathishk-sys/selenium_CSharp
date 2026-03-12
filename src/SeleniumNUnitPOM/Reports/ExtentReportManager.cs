@@ -16,10 +16,15 @@ public static class ExtentReportManager
     /// <summary>
     /// Initializes the ExtentReports instance.
     /// </summary>
-    public static void InitializeReport(string reportPath = "TestReports/ExtentReport.html")
+    public static void InitializeReport(string reportPath = "")
     {
         if (_extentReports != null)
             return;
+
+        if (string.IsNullOrEmpty(reportPath))
+        {
+            reportPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestReports", "ExtentReport.html");
+        }
 
         var directory = Path.GetDirectoryName(reportPath);
         if (!Directory.Exists(directory))
@@ -107,5 +112,13 @@ public static class ExtentReportManager
     public static ExtentTest? GetCurrentTest()
     {
         return _extentTest;
+    }
+
+    /// <summary>
+    /// Ends the current test in the report.
+    /// </summary>
+    public static void EndTest()
+    {
+        _extentTest = null;
     }
 }

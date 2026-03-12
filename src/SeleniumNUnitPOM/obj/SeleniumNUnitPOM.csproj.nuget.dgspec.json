@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj": {}
+    "C:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj": {
+    "C:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj",
+        "projectUniqueName": "C:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj",
         "projectName": "SeleniumNUnitPOM",
-        "projectPath": "c:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj",
+        "projectPath": "C:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\SeleniumNUnitPOM.csproj",
         "packagesPath": "C:\\Users\\Laptop\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\obj\\",
+        "outputPath": "C:\\Users\\Laptop\\Documents\\Automation\\selenium_CSharp\\selenium_CSharp\\src\\SeleniumNUnitPOM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -25,8 +25,9 @@ public static class Utils
     /// </summary>
     public static void SendKeys(IWebDriver driver, By locator, string text, int timeoutInSeconds = 10)
     {
-        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-        var element = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator)).FirstOrDefault();
+        // var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+        // var element = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator)).FirstOrDefault();
+        var element = driver.WaitForVisible(locator, timeoutInSeconds);
         if (element == null)
             throw new NoSuchElementException($"Element not found: {locator}");
         element.Clear();
@@ -392,5 +393,28 @@ public static class Utils
         {
             return false;
         }
+    }
+
+    /// <summary>
+    /// Takes a screenshot of the current page and saves it to the TestReports/Screenshots directory.
+    /// </summary>
+    /// <param name="driver">The WebDriver instance.</param>
+    /// <param name="name">The screenshot name (without extension).</param>
+    /// <returns>The full path to the saved screenshot file.</returns>
+    internal static string TakeScreenshot(IWebDriver driver, string name)
+    {
+        var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+        var screenshotDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestReports", "Screenshots");
+        
+        if (!Directory.Exists(screenshotDirectory))
+            Directory.CreateDirectory(screenshotDirectory);
+        
+        var timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff");
+        var filename = $"{name}_{timestamp}.png";
+        var filepath = Path.Combine(screenshotDirectory, filename);
+        
+        screenshot.SaveAsFile(filepath);
+        
+        return filepath;
     }
 }

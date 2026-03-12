@@ -1,4 +1,5 @@
 using OpenQA.Selenium;
+using SeleniumNUnitPOM.Reports;
 
 namespace SeleniumNUnitPOM.Pages;
 
@@ -19,4 +20,20 @@ public class SeleniumHomePage(IWebDriver driver) : BasePage(driver)
     {
         return WaitForElement(_downloadsLink).Displayed;
     }
+
+    public void ClickDownloadsLink()
+    {
+        try
+        {
+            WaitForElement(_downloadsLink).Click();
+            ExtentReportManager.LogPass("Clicked on Downloads link successfully.");
+        }
+        catch (WebDriverException ex)
+        {
+            ExtentReportManager.LogFail("Failed to click Downloads link."+ex.StackTrace);
+            throw new InvalidOperationException("Failed to click Downloads link.", ex);
+        }
+    }
+
+    
 }
