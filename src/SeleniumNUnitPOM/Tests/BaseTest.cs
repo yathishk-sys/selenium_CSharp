@@ -4,7 +4,7 @@ using SeleniumNUnitPOM.Reports;
 
 namespace SeleniumNUnitPOM.Tests;
 
-public abstract class TestBase
+public abstract class BaseTest
 {
     protected IWebDriver Driver = null!;
 
@@ -12,7 +12,7 @@ public abstract class TestBase
     public void SetUp()
     {
         ExtentReportManager.InitializeReport();
-        var headless = Environment.GetEnvironmentVariable("HEADLESS")?.Equals("true", StringComparison.OrdinalIgnoreCase) == true;
+        var headless = Environment.GetEnvironmentVariable("HEADLESS")?.Equals("true", StringComparison.OrdinalIgnoreCase) == false;
         Driver = DriverFactory.CreateChromeDriver(headless);
     }
 

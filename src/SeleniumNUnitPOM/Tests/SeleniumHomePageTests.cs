@@ -6,7 +6,7 @@ using SeleniumNUnitPOM.Utilities;
 namespace SeleniumNUnitPOM.Tests;
 
 [TestFixture]
-public class SeleniumHomePageTests : TestBase
+public class SeleniumHomePageTests : BaseTest
 {
     [SetUp]
     public void TestSetUp()

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeleniumNUnitPOM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27f6361c2acb5a2e8df43de73e473a0f3bedff58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69a259b0833755275c9828f97eb3bbf9ad3d053c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SeleniumNUnitPOM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SeleniumNUnitPOM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,12 +23,14 @@ public static class ExtentReportManager
 
         if (string.IsNullOrEmpty(reportPath))
         {
-            reportPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestReports", "ExtentReport.html");
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss"); 
+            reportPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestReports", "ExtentReport" + timestamp + ".html");
+            // reportPath = Path.Combine("src", "TestReports", "ExtentReport" + timestamp + ".html");
         }
 
-        var directory = Path.GetDirectoryName(reportPath);
-        if (!Directory.Exists(directory))
-            Directory.CreateDirectory(directory);
+        // var directory = Path.GetDirectoryName(reportPath);
+        // if (!Directory.Exists(directory))
+        //     Directory.CreateDirectory(directory);
 
         var htmlReporter = new ExtentSparkReporter(reportPath);
         htmlReporter.Config.ReportName = "Selenium Test Automation Report";

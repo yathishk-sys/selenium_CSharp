@@ -2,8 +2,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using SeleniumNUnitPOM.Utilities;
 
-namespace SeleniumNUnitPOM.Utilities;
+// namespace SeleniumNUnitPOM.Utilities;
 
 /// <summary>
 /// Utility class containing common actions performed on webpages.
@@ -15,8 +16,9 @@ public static class Utils
     /// </summary>
     public static void ClickElement(IWebDriver driver, By locator, int timeoutInSeconds = 10)
     {
-        var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-        var element = wait.Until(ExpectedConditions.ElementToBeClickable(locator));
+        // var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+        // var element = wait.Until(ExpectedConditions.ElementToBeClickable(locator));
+        var element = driver.WaitForVisible(locator, timeoutInSeconds);
         element.Click();
     }
 
@@ -46,7 +48,7 @@ public static class Utils
     /// <summary>
     /// Gets the text content of an element.
     /// </summary>
-    public static string GetText(IWebDriver driver, By locator, int timeoutInSeconds = 10)
+    public static string GetElementText(IWebDriver driver, By locator, int timeoutInSeconds = 10)
     {
         var element = driver.WaitForVisible(locator, timeoutInSeconds);
         return element.Text;
@@ -416,5 +418,17 @@ public static class Utils
         screenshot.SaveAsFile(filepath);
         
         return filepath;
+    }
+
+    /// <summary>
+    /// Sets the state of a checkbox (checked or unchecked).
+    /// </summary>
+    public static void SetCheckboxState(IWebDriver driver, By locator, bool isChecked, int timeoutInSeconds = 10)
+    {
+        var element = driver.WaitForVisible(locator, timeoutInSeconds);
+        if (element.Selected != isChecked)
+        {
+            element.Click();
+        }
     }
 }
